@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AmSoul.Core</name>
+    </assembly>
+    <members>
+        <member name="T:AmSoul.Core.Extensions.DynamicExtensions">
+            <summary>
+            Dynamic动态类扩展
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Service Collection Extensions
+            </summary>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMongoDb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Mongodb Store
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMongoDb``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Mongodb Store External
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMySql(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Mysql Store
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMySql``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Mysql Store External
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddOracle(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Oracle Store
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddOracle``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Oracle Store External
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register SqlServer Store
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddSqlServer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register SqlServer Store External
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddJwtSwaggerGen(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.String,System.String)">
+            <summary>
+            Register Jwt Swagger
+            </summary>
+            <param name="services"></param>
+            <param name="title"></param>
+            <param name="version"></param>
+            <param name="description"></param>
+            <param name="externalXmlFileName"></param>
+        </member>
+        <member name="T:AmSoul.Core.Interfaces.IAsyncRestService`1">
+            <summary>
+            Restful异步服务基础接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.CreateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            新增
+            </summary>
+            <param name="obj"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            按ID查询
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.DeleteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.PutAsync(System.String,`0,System.Threading.CancellationToken)">
+            <summary>
+            更新
+            </summary>
+            <param name="id"></param>
+            <param name="obj"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            多条件查询
+            </summary>
+            <param name="parameters"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AmSoul.Core.Interfaces.IDataModel.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Models.ResponseDescription">
+            <summary>
+            响应信息描述
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.ResponseDescription.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Models.Pagination">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.Pagination.Limit">
+            <summary>
+            记录条数
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.Pagination.Offset">
+            <summary>
+            偏移值
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.Pagination.OrderBy">
+            <summary>
+            排序字段：asc desc
+            </summary>
+        </member>
+        <member name="F:AmSoul.Core.Models.Pagination.Bucket">
+            <summary>
+            库名称
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Models.QueryParam">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.QueryParam.Field">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.QueryParam.Conditions">
+            <summary>
+            条件
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Models.QueryParam.Logical">
+            <summary>
+            逻辑：AND OR IN EQ
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Models.PageData`1">
+            <summary>
+            分页数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:AmSoul.Core.Resources.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.AggregateFail">
+            <summary>
+              查找类似 聚合查询失败 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.CreateFail">
+            <summary>
+              查找类似 新增失败 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.CreateSucceeded">
+            <summary>
+              查找类似 新增成功 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.DeleteFail">
+            <summary>
+              查找类似 删除失败，共删除 {0} 条记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.DeleteSucceeded">
+            <summary>
+              查找类似 删除成功，共删除 {0} 条记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.Exception">
+            <summary>
+              查找类似 进程异常 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.QueryComplete">
+            <summary>
+              查找类似 查询完成 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.QueryFail">
+            <summary>
+              查找类似 无匹配记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.QueryParamError">
+            <summary>
+              查找类似 查询参数错误 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.QuerySucceeded">
+            <summary>
+              查找类似 查询到 {0} 条记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.Required">
+            <summary>
+              查找类似 &apos;{0}&apos;是必需字段 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.UpdateFail">
+            <summary>
+              查找类似 更新失败，共更新 {0} 条记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:AmSoul.Core.Resources.Resources.UpdateSucceeded">
+            <summary>
+              查找类似 更新成功，共更新 {0} 条记录 的本地化字符串。
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Services.MongoRestServiceBase`1">
+            <summary>
+            MongoDB Restful异步基础服务
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.#ctor(AmSoul.Core.Interfaces.IDatabaseSetting)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.CreateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            新增
+            </summary>
+            <param name="obj"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            按ID查询
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.DeleteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.DeleteAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            删除
+            </summary>
+            <param name="parameters"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.PutAsync(System.String,`0,System.Threading.CancellationToken)">
+            <summary>
+            更新
+            </summary>
+            <param name="id"></param>
+            <param name="obj"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            多条件查询
+            </summary>
+            <param name="parameters"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.AggregateAsync(System.Collections.Generic.List{System.String},System.Threading.CancellationToken)">
+            <summary>
+            聚合查询
+            </summary>
+            <param name="conditions"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.Dispose">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="T:AmSoul.Core.Utilis.IDCardValidation">
+            <summary>
+            身份证号验证工具
+            </summary>
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.CheckIDCard(System.String)">
+            <summary>
+            校验身份证合理性
+            </summary>
+            <param name="idNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.Conver15To18(System.String)">
+            <summary>
+            15位转换为18位
+            </summary>
+            <param name="perID15">15位身份证号码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.CheckIDCard18(System.String)">
+            <summary>  
+            18位身份证号码验证  
+            </summary>  
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.CheckIDCard15(System.String)">
+            <summary>  
+            15位身份证号码验证  
+            </summary>  
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.GetBirthday(System.String)">
+            <summary>
+            获取出生日期
+            </summary>
+            <param name="perID18"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Utilis.IDCardValidation.GetAgeByBirthday(System.DateTime)">
+            <summary>
+            根据出生年月计算 X岁或X月X天或X天
+            </summary>
+            <param name="birthday"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
