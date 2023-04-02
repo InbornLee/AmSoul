@@ -1,7 +1,7 @@
 # AmSoul
 .Net7 Dynamic Restful Webapi
 
-```C#
+```CSharp
 using AmSoul.Core.Extensions;
 using AmSoul.Core.Models;
 using AmSoul.Identity.MongoDB.Extensions;
@@ -59,3 +59,4 @@ app.UseCors();
 app.MapControllers();
 
 app.Run();
+```
