@@ -3,9 +3,9 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-## 简介
+## ���
 
-[AmSoul](https://github.com/InbornLee/AmSoul) 是一个基于.Net7的动态WebApi模版，它使用了Panda.DynamicWebApi，内置支持多种数据库配置，有较高的代码规范，使用方式简单方便，基于JWT实现动态权限路由，开箱即用的后台解决方案，也可用于学习参考。
+[AmSoul](https://github.com/InbornLee/AmSoul) ��һ������.Net7�Ķ�̬WebApiģ�棬��ʹ����Panda.DynamicWebApi������֧�ֶ������ݿ����ã��нϸߵĴ���淶��ʹ�÷�ʽ�򵥷��㣬����JWTʵ�ֶ�̬Ȩ��·�ɣ����伴�õĺ�̨���������Ҳ������ѧϰ�ο���
 
 ```CSharp
 using AmSoul.Core.Extensions;
@@ -67,12 +67,12 @@ app.MapControllers();
 app.Run();
 ```
 
-## 安装使用
+## ��װʹ��
 
 - 环境配置
   本地环境需要安装.Net7 SDK 和 Git
 
-- 克隆代码
+- ��¡����
 
 ```bash
 git clone https://github.com/InbornLee/AmSoul.git
