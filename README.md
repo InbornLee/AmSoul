@@ -38,7 +38,7 @@ builder.Services.AddMongoDbIdentityStores<BaseUser, BaseRole>(
 builder.Services.AddDynamicWebApi();
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
-builder.Services.AddJwtSwaggerGen("��̬ Webapi", "v1", "Webapi ����");
+builder.Services.AddJwtSwaggerGen("动态 Webapi", "v1", "Webapi 测试");
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
