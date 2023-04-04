@@ -15,7 +15,7 @@ public class WeatherForecastController : BaseController
 };
 
     private readonly ILogger<WeatherForecastController> _logger;
-    private readonly IUserService _userService;
+    private new readonly IUserService _userService;
     public WeatherForecastController(IUserService userService, ILogger<WeatherForecastController> logger) : base(userService)
     {
         _userService = userService;
