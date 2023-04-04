@@ -4,7 +4,6 @@ using AmSoul.Identity.MongoDB.Models;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AmSoul.Identity.MongoDB.Controllers;
@@ -23,7 +22,7 @@ public abstract class UserControllerBase : BaseController
     /// <returns></returns>
     [HttpGet]
     [Route("GetUsers")]
-    [ProducesResponseType(typeof(IList<UserDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<UserDto>), StatusCodes.Status200OK)]
     public IActionResult Get()
     {
         var users = _userService
@@ -39,9 +38,7 @@ public abstract class UserControllerBase : BaseController
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}", Name = "GetUserById")]
-    [ProducesResponseType(typeof(BaseUser), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> Get([FromRoute] string id)
     {
         if (Token == null) return Unauthorized();
@@ -63,6 +60,7 @@ public abstract class UserControllerBase : BaseController
     /// <returns></returns>
     [HttpGet]
     [Route("GetRoles")]
+    [ProducesResponseType(typeof(List<RoleDto>), StatusCodes.Status200OK)]
     public IActionResult GetRoles()
     {
         var roles = _userService
