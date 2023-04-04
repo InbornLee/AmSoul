@@ -1,4 +1,4 @@
-# AmSoul
+﻿# AmSoul
 .Net7 Dynamic Restful Webapi
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
@@ -38,7 +38,7 @@ builder.Services.AddMongoDbIdentityStores<BaseUser, BaseRole>(
 builder.Services.AddDynamicWebApi();
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
-builder.Services.AddJwtSwaggerGen("动态 Webapi", "v1", "Webapi 测试");
+builder.Services.AddJwtSwaggerGen("��̬ Webapi", "v1", "Webapi ����");
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -70,7 +70,7 @@ app.Run();
 ## 安装使用
 
 - 环境配置
-  **本地环境需要安装.Net7 SDK 和 Git**
+  本地环境需要安装.Net7 SDK 和 Git
 
 - 克隆代码
 
