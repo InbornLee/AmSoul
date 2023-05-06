@@ -1,6 +1,6 @@
 ﻿using AmSoul.Core.Interfaces;
-using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace Sample.Models
 {
@@ -10,6 +10,7 @@ namespace Sample.Models
         public string? Id { get; set; }
         public string? Name { get; set; }
         public string? AdCode { get; set; }
+        public string? CityCode { get; set; }
         public string? PCode { get; set; }
         public string? Level { get; set; }
     }

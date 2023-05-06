@@ -1,5 +1,4 @@
 using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
 using AmSoul.Core.Models;
 using AmSoul.Identity.MongoDB.Controllers;
 using AmSoul.Identity.MongoDB.Interfaces;
