@@ -39,6 +39,36 @@
             <param name="description"></param>
             <param name="externalXmlFileName"></param>
         </member>
+        <member name="T:AmSoul.Core.Interfaces.IAsyncQueryService`1">
+            <summary>
+            Restful异步查询服务接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncQueryService`1.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            按ID查询
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncQueryService`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Interfaces.IAsyncQueryService`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            多条件查询
+            </summary>
+            <param name="parameters"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
         <member name="T:AmSoul.Core.Interfaces.IAsyncRestService`1">
             <summary>
             Restful异步服务基础接口
@@ -50,14 +80,6 @@
             新增
             </summary>
             <param name="obj"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.GetAsync(System.String,System.Threading.CancellationToken)">
-            <summary>
-            按ID查询
-            </summary>
-            <param name="id"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
@@ -75,22 +97,6 @@
             </summary>
             <param name="id"></param>
             <param name="obj"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
-            <summary>
-            分页查询
-            </summary>
-            <param name="paginationParams"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Interfaces.IAsyncRestService`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
-            <summary>
-            多条件查询
-            </summary>
-            <param name="parameters"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
@@ -241,6 +247,49 @@
               查找类似 更新成功，共更新 {0} 条记录 的本地化字符串。
             </summary>
         </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.#ctor(AmSoul.Core.Interfaces.IDatabaseSetting)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            按ID查询
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            多条件查询
+            </summary>
+            <param name="parameters"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.AggregateAsync(System.Collections.Generic.List{System.String},System.Threading.CancellationToken)">
+            <summary>
+            聚合查询
+            </summary>
+            <param name="conditions"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmSoul.Core.Services.MongoQueryServiceBase`1.Dispose">
+            <summary>
+            销毁
+            </summary>
+        </member>
         <member name="T:AmSoul.Core.Services.MongoRestServiceBase`1">
             <summary>
             MongoDB Restful异步基础服务
@@ -258,14 +307,6 @@
             新增
             </summary>
             <param name="obj"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.GetAsync(System.String,System.Threading.CancellationToken)">
-            <summary>
-            按ID查询
-            </summary>
-            <param name="id"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
@@ -293,35 +334,6 @@
             <param name="obj"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
-            <summary>
-            多条件查询
-            </summary>
-            <param name="parameters"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.AggregateAsync(System.Collections.Generic.List{System.String},System.Threading.CancellationToken)">
-            <summary>
-            聚合查询
-            </summary>
-            <param name="conditions"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
-            <summary>
-            分页查询
-            </summary>
-            <param name="paginationParams"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmSoul.Core.Services.MongoRestServiceBase`1.Dispose">
-            <summary>
-            销毁
-            </summary>
         </member>
         <member name="T:AmSoul.Core.Utilis.IDCardValidation">
             <summary>

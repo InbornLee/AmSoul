@@ -1,12 +1,13 @@
 ﻿using AmSoul.Core.Interfaces;
+using AmSoul.Core.Models;
 using AmSoul.Extension.Sql.Services;
 using Sample.Models;
 
 namespace Sample.Services
 {
-    public class OperationCostAppService : SqlSugarRestServiceBase<OperationCost>
+    public class OperationCostAppService : SqlSugarQueryServiceBase<OperationCost>
     {
-        public OperationCostAppService(IOracleDatabaseSetting settings) : base(settings) { }
+        public OperationCostAppService(OracleDatabaseSetting settings) : base(settings) { }
         //public async Task<List<OperationCost>> GetAsync(string id, string secondCategoryCode, CancellationToken cancellationToken = default)
         //{
         //    cancellationToken.ThrowIfCancellationRequested();
