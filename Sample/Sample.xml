@@ -55,6 +55,176 @@
             目录
             </summary>
         </member>
+        <member name="P:Sample.Models.OperationInfo.Id">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.RegOptId">
+            <summary>
+            手术ID
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Name">
+            <summary>
+            患者姓名
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Sex">
+            <summary>
+            患者性别
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Bed">
+            <summary>
+            床号
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.DeptId">
+            <summary>
+            科室ID
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.DeptName">
+            <summary>
+            科室名称
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperaDate">
+            <summary>
+            手术日期
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.DesignedOptName">
+            <summary>
+            拟施手术名称
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.DesignedOptCode">
+            <summary>
+            拟施手术代码
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OptLevel">
+            <summary>
+            手术级别
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.Emergency">
+            <summary>
+            是否急诊？日间？
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperatorId">
+            <summary>
+            术者ID（工号）
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperatorName">
+            <summary>
+            术者名称
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AssistantId">
+            <summary>
+            助手ID（工号）
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AssistantName">
+            <summary>
+            助手名称
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnaRecordId">
+            <summary>
+            麻醉记录ID
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnaSumId">
+            <summary>
+            麻醉小结ID
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnestSummary">
+            <summary>
+            麻醉小结
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnesthetistId">
+            <summary>
+            麻醉师ID（工号）
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnesthetistName">
+            <summary>
+            麻醉师名称
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AsaLevel">
+            <summary>
+            ASA级别
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnaesLevel">
+            <summary>
+            麻醉级别
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnaesStartTime">
+            <summary>
+            麻醉开始时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.AnaesEndTime">
+            <summary>
+            麻醉结束时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperStartTime">
+            <summary>
+            手术开始时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperEndTime">
+            <summary>
+            手术结束时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperaTotalMinutes">
+            <summary>
+            总手术时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.InOperRoomTime">
+            <summary>
+            入室时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OutOperRoomTime">
+            <summary>
+            出室时间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.OperRoomName">
+            <summary>
+            手术间
+            </summary>
+        </member>
+        <member name="P:Sample.Models.OperationInfo.LeaveTo">
+            <summary>
+            去向
+            </summary>
+        </member>
         <member name="T:Sample.Models.PrintRecord">
             <summary>
             核酸打印记录

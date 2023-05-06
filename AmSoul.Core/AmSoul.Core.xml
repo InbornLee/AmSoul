@@ -29,50 +29,6 @@
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMySql(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register Mysql Store
-            </summary>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddMySql``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register Mysql Store External
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddOracle(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register Oracle Store
-            </summary>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddOracle``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register Oracle Store External
-            </summary>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register SqlServer Store
-            </summary>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
-        <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddSqlServer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
-            <summary>
-            Register SqlServer Store External
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="services"></param>
-            <param name="configuration"></param>
-        </member>
         <member name="M:AmSoul.Core.Extensions.ServiceCollectionExtensions.AddJwtSwaggerGen(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.String,System.String)">
             <summary>
             Register Jwt Swagger

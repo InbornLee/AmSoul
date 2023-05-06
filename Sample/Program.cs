@@ -1,9 +1,12 @@
 using AmSoul.Core.Extensions;
 using AmSoul.Core.Models;
+using AmSoul.Extension.Sql.Extensions;
 using AmSoul.Identity.MongoDB.Extensions;
 using AmSoul.Identity.MongoDB.Models;
+using Microsoft.OpenApi.Models;
 using Panda.DynamicWebApi;
 using Sample.Models;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,10 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 
 builder.Services.AddMongoDb(builder.Configuration);
 builder.Services.AddMongoDb<MongoDbDatabaseSetting2>(builder.Configuration);
+
+builder.Services.AddMySql(builder.Configuration);
+builder.Services.AddOracle(builder.Configuration);
+
 
 builder.Services.AddMongoDbIdentityStores<BaseUser, BaseRole>(
     identityOptions =>
@@ -30,14 +37,22 @@ builder.Services.AddDynamicWebApi();
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddJwtSwaggerGen("¶¯Ì¬ Webapi", "v1", "Webapi ²âÊÔ");
+builder.Services.AddSwaggerGen(options =>
+{
+    var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+    var baseXmlPath = Path.Combine(baseDirectory, "AmSoul.Extension.Sql.xml");
+
+    options.IncludeXmlComments(baseXmlPath);
+});
+
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyOrigin();
-        policy.AllowAnyMethod();
-        policy.AllowAnyHeader();
-    });
+options.AddDefaultPolicy(policy =>
+{
+policy.AllowAnyOrigin();
+policy.AllowAnyMethod();
+policy.AllowAnyHeader();
+});
 });
 builder.Services.AddEndpointsApiExplorer();
 
