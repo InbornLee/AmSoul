@@ -50,10 +50,13 @@ public class QueryParam
 /// 分页数据
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public sealed class PageData<T> : BaseResponse<T>
+public sealed class PageData<T> : IBaseResponse
 {
+    public bool Succeeded { get; set; }
+    public string? Message { get; set; }
+    public IList<string>? Errors { get; set; }
     //[BsonElement("total")]
     public int? Total { get; set; }
     //[BsonElement("data")]
-    public new ICollection<T>? Data { get; set; }
+    public ICollection<T>? Data { get; set; }
 }

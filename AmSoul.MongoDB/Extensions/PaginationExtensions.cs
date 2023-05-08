@@ -27,13 +27,13 @@ namespace AmSoul.MongoDB
             stageArray.Add(sort);
 
             var facet = new BsonDocument("$facet", new BsonDocument{
-            {"metadata", new BsonArray{new BsonDocument("$count", "total")}},
-            {"data", new BsonArray{new BsonDocument("$skip", param.Offset), new BsonDocument("$limit", param.Limit) }}}
+            {"metadata", new BsonArray{new BsonDocument("$count", "Total")}},
+            {"Data", new BsonArray{new BsonDocument("$skip", param.Offset), new BsonDocument("$limit", param.Limit) }}}
             );
             stageArray.Add(facet);
             var project = new BsonDocument("$project", new BsonDocument {
-            { "total", new BsonDocument("$cond", new BsonDocument { { "if", new BsonDocument("$arrayElemAt", new BsonArray { "$metadata.total", 0 }) }, { "then", new BsonDocument("$arrayElemAt", new BsonArray { "$metadata.total", 0 }) }, { "else", 0 } }) },
-            { "data", 1 } }
+            { "Total", new BsonDocument("$cond", new BsonDocument { { "if", new BsonDocument("$arrayElemAt", new BsonArray { "$metadata.Total", 0 }) }, { "then", new BsonDocument("$arrayElemAt", new BsonArray { "$metadata.Total", 0 }) }, { "else", 0 } }) },
+            { "Data", 1 } }
             );
             stageArray.Add(project);
             return stageArray;
