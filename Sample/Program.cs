@@ -3,10 +3,8 @@ using AmSoul.Core.Models;
 using AmSoul.Extension.Sql.Extensions;
 using AmSoul.Identity.MongoDB.Extensions;
 using AmSoul.Identity.MongoDB.Models;
-using Microsoft.OpenApi.Models;
 using Panda.DynamicWebApi;
 using Sample.Models;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 

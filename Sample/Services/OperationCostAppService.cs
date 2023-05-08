@@ -1,5 +1,4 @@
-﻿using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
+﻿using AmSoul.Extension.Sql.Models;
 using AmSoul.Extension.Sql.Services;
 using Sample.Models;
 

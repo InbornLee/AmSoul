@@ -1,5 +1,5 @@
 ﻿using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
+using AmSoul.Extension.Sql.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;

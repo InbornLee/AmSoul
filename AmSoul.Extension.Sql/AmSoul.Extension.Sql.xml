@@ -48,6 +48,21 @@
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
+        <member name="T:AmSoul.Extension.Sql.Models.MySqlDatabaseSetting">
+            <summary>
+            Default MySql DatabaseSetting
+            </summary>
+        </member>
+        <member name="T:AmSoul.Extension.Sql.Models.SqlServerDatabaseSetting">
+            <summary>
+            Default SqlServer DatabaseSetting
+            </summary>
+        </member>
+        <member name="T:AmSoul.Extension.Sql.Models.OracleDatabaseSetting">
+            <summary>
+            Default Oracle DatabaseSetting
+            </summary>
+        </member>
         <member name="T:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1">
             <summary>
             SqlSugar Restful异步查询服务
