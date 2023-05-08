@@ -1,6 +1,5 @@
-﻿using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
-using AmSoul.Core.Services;
+﻿using AmSoul.Core;
+using AmSoul.MongoDB;
 using Microsoft.AspNetCore.Mvc;
 using Sample.Models;
 

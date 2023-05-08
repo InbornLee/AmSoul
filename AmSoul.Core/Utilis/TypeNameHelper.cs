@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace AmSoul.Core.Utilis;
+namespace AmSoul.Core;
 
 public class TypeNameHelper
 {

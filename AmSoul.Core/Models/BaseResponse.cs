@@ -1,6 +1,4 @@
-﻿using AmSoul.Core.Interfaces;
-
-namespace AmSoul.Core.Models;
+﻿namespace AmSoul.Core;
 
 public class BaseResponse<T> : IBaseResponse
 {

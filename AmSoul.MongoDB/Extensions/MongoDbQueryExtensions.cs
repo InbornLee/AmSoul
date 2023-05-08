@@ -1,9 +1,8 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
+﻿using AmSoul.Core;
 using MongoDB.Driver;
 using System.Linq.Expressions;
 
-namespace AmSoul.Core.Extensions;
+namespace AmSoul.MongoDB;
 
 public static class MongoDbQueryExtensions
 {

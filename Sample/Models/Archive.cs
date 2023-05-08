@@ -1,4 +1,4 @@
-﻿using AmSoul.Core.Interfaces;
+﻿using AmSoul.Core;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 

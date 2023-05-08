@@ -2,7 +2,7 @@
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
 
-namespace AmSoul.Core.Interfaces;
+namespace AmSoul.MongoDB;
 
 public interface IMongoGridFSService
 {

@@ -1,5 +1,4 @@
-using AmSoul.Identity.MongoDB.Controllers;
-using AmSoul.Identity.MongoDB.Interfaces;
+using AmSoul.Identity.MongoDB;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;

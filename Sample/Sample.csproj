@@ -27,8 +27,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AmSoul.Core\AmSoul.Core.csproj" />
-    <ProjectReference Include="..\AmSoul.Extension.Sql\AmSoul.Extension.Sql.csproj" />
     <ProjectReference Include="..\AmSoul.Identity.MongoDB\AmSoul.Identity.MongoDB.csproj" />
+    <ProjectReference Include="..\AmSoul.MongoDB\AmSoul.MongoDB.csproj" />
+    <ProjectReference Include="..\AmSoul.SQL\AmSoul.SQL.csproj" />
   </ItemGroup>
 
 </Project>

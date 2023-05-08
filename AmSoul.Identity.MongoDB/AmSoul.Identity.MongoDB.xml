@@ -4,71 +4,71 @@
         <name>AmSoul.Identity.MongoDB</name>
     </assembly>
     <members>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AdminControllerBase.Init">
+        <member name="M:AmSoul.Identity.MongoDB.AdminControllerBase.Init">
             <summary>
             初始化系统
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AdminControllerBase.AddRole(AmSoul.Identity.MongoDB.Models.RoleDto)">
+        <member name="M:AmSoul.Identity.MongoDB.AdminControllerBase.AddRole(AmSoul.Identity.MongoDB.RoleDto)">
             <summary>
             新增角色
             </summary>
             <param name="roleDto"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AdminControllerBase.CreateUser(AmSoul.Identity.MongoDB.Models.UserDto)">
+        <member name="M:AmSoul.Identity.MongoDB.AdminControllerBase.CreateUser(AmSoul.Identity.MongoDB.UserDto)">
             <summary>
             新增用户
             </summary>
             <param name="user"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AuthenticationControllerBase.Authenticate(AmSoul.Identity.MongoDB.Models.UserDto)">
+        <member name="M:AmSoul.Identity.MongoDB.AuthenticationControllerBase.Authenticate(AmSoul.Identity.MongoDB.UserDto)">
             <summary>
             身份验证
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AuthenticationControllerBase.Me">
+        <member name="M:AmSoul.Identity.MongoDB.AuthenticationControllerBase.Me">
             <summary>
             获取当前身份
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.AuthenticationControllerBase.ChangePassword(AmSoul.Identity.MongoDB.Models.ChangePasswordDto)">
+        <member name="M:AmSoul.Identity.MongoDB.AuthenticationControllerBase.ChangePassword(AmSoul.Identity.MongoDB.ChangePasswordDto)">
             <summary>
             修改密码
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.UserControllerBase.Get">
+        <member name="M:AmSoul.Identity.MongoDB.UserControllerBase.Get">
             <summary>
             获取用户列表
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.UserControllerBase.Get(System.String)">
+        <member name="M:AmSoul.Identity.MongoDB.UserControllerBase.Get(System.String)">
             <summary>
             按ID查询用户
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Controllers.UserControllerBase.GetRoles">
+        <member name="M:AmSoul.Identity.MongoDB.UserControllerBase.GetRoles">
             <summary>
             获取角色列表
             </summary>
             <returns></returns>
         </member>
-        <member name="T:AmSoul.Identity.MongoDB.Extensions.ServiceCollectionExtensions">
+        <member name="T:AmSoul.Identity.MongoDB.ServiceCollectionExtensions">
             <summary>
             Service Collection Extensions
             </summary>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Extensions.ServiceCollectionExtensions.AddJwtAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,AmSoul.Identity.MongoDB.Models.JwtTokenOptions)">
+        <member name="M:AmSoul.Identity.MongoDB.ServiceCollectionExtensions.AddJwtAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,AmSoul.Identity.MongoDB.JwtTokenOptions)">
             <summary>
             Register Jwt Authentication
             </summary>
@@ -267,24 +267,24 @@
               查找类似 用户没有角色 &apos;{0}&apos; 权限. 的本地化字符串。
             </summary>
         </member>
-        <member name="T:AmSoul.Identity.MongoDB.Stores.RoleStore`2">
+        <member name="T:AmSoul.Identity.MongoDB.RoleStore`2">
             <summary>
             Creates a new instance of a persistence store for roles.
             </summary>
             <typeparam name="TRole">The type of the class representing a role</typeparam>
             <typeparam name="TKey">The type of the class id</typeparam>
         </member>
-        <member name="P:AmSoul.Identity.MongoDB.Stores.RoleStore`2.ErrorDescriber">
+        <member name="P:AmSoul.Identity.MongoDB.RoleStore`2.ErrorDescriber">
             <summary>
             Gets or sets the <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> for any error that occurred with the current operation.
             </summary>
         </member>
-        <member name="P:AmSoul.Identity.MongoDB.Stores.RoleStore`2.Roles">
+        <member name="P:AmSoul.Identity.MongoDB.RoleStore`2.Roles">
             <summary>
             A navigation property for the roles the store contains.
             </summary>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.CreateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.CreateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Creates a new role in a store as an asynchronous operation.
             </summary>
@@ -292,7 +292,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.UpdateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.UpdateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Updates a role in a store as an asynchronous operation.
             </summary>
@@ -300,7 +300,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.DeleteAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.DeleteAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Deletes a role from the store as an asynchronous operation.
             </summary>
@@ -308,7 +308,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the asynchronous query.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.GetRoleIdAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.GetRoleIdAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the ID for a role from the store as an asynchronous operation.
             </summary>
@@ -316,7 +316,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the ID of the role.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.GetRoleNameAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.GetRoleNameAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the name of a role from the store as an asynchronous operation.
             </summary>
@@ -324,7 +324,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the name of the role.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.SetRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.SetRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the name of a role in the store as an asynchronous operation.
             </summary>
@@ -333,7 +333,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.GetNormalizedRoleNameAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.GetNormalizedRoleNameAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Get a role's normalized name as an asynchronous operation.
             </summary>
@@ -341,7 +341,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the name of the role.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.SetNormalizedRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.SetNormalizedRoleNameAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Set a role's normalized name as an asynchronous operation.
             </summary>
@@ -350,7 +350,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.FindByIdAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.FindByIdAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Finds the role who has the specified ID as an asynchronous operation.
             </summary>
@@ -358,7 +358,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that result of the look up.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.FindByNameAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.FindByNameAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Finds the role who has the specified normalized name as an asynchronous operation.
             </summary>
@@ -366,7 +366,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that result of the look up.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.GetClaimsAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.GetClaimsAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Get the claims associated with the specified <paramref name="role"/> as an asynchronous operation.
             </summary>
@@ -374,7 +374,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the claims granted to a role.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.AddClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.AddClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
             <summary>
             Adds the <paramref name="claim"/> given to the specified <paramref name="role"/>.
             </summary>
@@ -383,7 +383,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.RemoveClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.RemoveClaimAsync(`0,System.Security.Claims.Claim,System.Threading.CancellationToken)">
             <summary>
             Removes the <paramref name="claim"/> given from the specified <paramref name="role"/>.
             </summary>
@@ -392,26 +392,26 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.Dispose">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.Dispose">
             <summary>
             Dispose the stores
             </summary>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.ConvertIdFromString(System.String)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.ConvertIdFromString(System.String)">
             <summary>
             Converts the provided <paramref name="id"/> to a strongly typed key object.
             </summary>
             <param name="id">The id to convert.</param>
             <returns>An instance of <typeparamref name="TKey"/> representing the provided <paramref name="id"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.RoleStore`2.ConvertIdToString(`1)">
+        <member name="M:AmSoul.Identity.MongoDB.RoleStore`2.ConvertIdToString(`1)">
             <summary>
             Converts the provided <paramref name="id"/> to its string representation.
             </summary>
             <param name="id">The id to convert.</param>
             <returns>An <see cref="T:System.String"/> representation of the provided <paramref name="id"/>.</returns>
         </member>
-        <member name="T:AmSoul.Identity.MongoDB.Stores.UserStore`3">
+        <member name="T:AmSoul.Identity.MongoDB.UserStore`3">
             <summary>
             Represents a new instance of a persistence store for the specified user and role types.
             </summary>
@@ -419,17 +419,17 @@
             <typeparam name="TRole">The type representing a role.</typeparam>
             <typeparam name="TKey">The type of the primary key for a user/role.</typeparam>
         </member>
-        <member name="P:AmSoul.Identity.MongoDB.Stores.UserStore`3.ErrorDescriber">
+        <member name="P:AmSoul.Identity.MongoDB.UserStore`3.ErrorDescriber">
             <summary>
             Gets or sets the <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> for any error that occurred with the current operation.
             </summary>
         </member>
-        <member name="P:AmSoul.Identity.MongoDB.Stores.UserStore`3.Users">
+        <member name="P:AmSoul.Identity.MongoDB.UserStore`3.Users">
             <summary>
             A navigation property for the users the store contains.
             </summary>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.#ctor(MongoDB.Driver.IMongoCollection{`0},MongoDB.Driver.IMongoCollection{`1},Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.#ctor(MongoDB.Driver.IMongoCollection{`0},MongoDB.Driver.IMongoCollection{`1},Microsoft.AspNetCore.Identity.IdentityErrorDescriber)">
             <summary>
             Creates a new instance of the store.
             </summary>
@@ -437,7 +437,7 @@
             <param name="roleCollection">The role mongo collection.</param>
             <param name="describer">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber"/> used to describe store errors.</param>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetTokenAsync(`0,System.String,System.String,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetTokenAsync(`0,System.String,System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the token value for a particular user.
             </summary>
@@ -448,7 +448,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.RemoveTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.RemoveTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Deletes a token for a user.
             </summary>
@@ -458,7 +458,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetTokenAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Returns the token value.
             </summary>
@@ -468,7 +468,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetAuthenticatorKeyAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetAuthenticatorKeyAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Get the authenticator key for the specified <paramref name="user" />.
             </summary>
@@ -476,7 +476,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the security stamp for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetAuthenticatorKeyAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetAuthenticatorKeyAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the authenticator key for the specified <paramref name="user"/>.
             </summary>
@@ -485,7 +485,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.CreateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.CreateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Creates the specified <paramref name="user"/> in the user store.
             </summary>
@@ -493,7 +493,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the creation operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.DeleteAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.DeleteAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Deletes the specified <paramref name="user"/> from the user store.
             </summary>
@@ -501,7 +501,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.FindByIdAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.FindByIdAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Finds and returns a user, if any, who has the specified <paramref name="userId"/>.
             </summary>
@@ -511,7 +511,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="userId"/> if it exists.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.FindByNameAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.FindByNameAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Finds and returns a user, if any, who has the specified normalized user name.
             </summary>
@@ -521,7 +521,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user matching the specified <paramref name="normalizedUserName"/> if it exists.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.UpdateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.UpdateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Updates the specified <paramref name="user"/> in the user store.
             </summary>
@@ -529,7 +529,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the <see cref="T:Microsoft.AspNetCore.Identity.IdentityResult"/> of the update operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.AddClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.AddClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
             <summary>
             Adds the <paramref name="claims"/> given to the specified <paramref name="user"/>.
             </summary>
@@ -538,7 +538,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.ReplaceClaimAsync(`0,System.Security.Claims.Claim,System.Security.Claims.Claim,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.ReplaceClaimAsync(`0,System.Security.Claims.Claim,System.Security.Claims.Claim,System.Threading.CancellationToken)">
             <summary>
             Replaces the <paramref name="claim"/> on the specified <paramref name="user"/>, with the <paramref name="newClaim"/>.
             </summary>
@@ -548,7 +548,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.RemoveClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.RemoveClaimsAsync(`0,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
             <summary>
             Removes the <paramref name="claims"/> given from the specified <paramref name="user"/>.
             </summary>
@@ -557,7 +557,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetUsersForClaimAsync(System.Security.Claims.Claim,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetUsersForClaimAsync(System.Security.Claims.Claim,System.Threading.CancellationToken)">
             <summary>
             Retrieves all users with the specified claim.
             </summary>
@@ -567,7 +567,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> contains a list of users, if any, that contain the specified claim.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetNormalizedUserNameAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetNormalizedUserNameAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the normalized user name for the specified <paramref name="user"/>.
             </summary>
@@ -575,7 +575,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the normalized user name for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetUserIdAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetUserIdAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the user identifier for the specified <paramref name="user"/>.
             </summary>
@@ -583,7 +583,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the identifier for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetUserNameAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetUserNameAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the user name for the specified <paramref name="user"/>.
             </summary>
@@ -591,7 +591,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the name for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetClaimsAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetClaimsAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Get the claims associated with the specified <paramref name="user"/> as an asynchronous operation.
             </summary>
@@ -599,7 +599,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the claims granted to a user.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetNormalizedUserNameAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetNormalizedUserNameAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the given normalized name for the specified <paramref name="user"/>.
             </summary>
@@ -608,7 +608,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetUserNameAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetUserNameAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the given <paramref name="userName" /> for the specified <paramref name="user"/>.
             </summary>
@@ -617,7 +617,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetEmailAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetEmailAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the email address for the specified <paramref name="user"/>.
             </summary>
@@ -625,7 +625,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The task object containing the results of the asynchronous operation, the email address for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetEmailConfirmedAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetEmailConfirmedAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets a flag indicating whether the email address for the specified <paramref name="user"/> has been verified, true if the email address is verified otherwise
             false.
@@ -637,7 +637,7 @@
             has been confirmed or not.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.FindByEmailAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.FindByEmailAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Gets the user, if any, associated with the specified, normalized email address.
             </summary>
@@ -647,7 +647,7 @@
             The task object containing the results of the asynchronous lookup operation, the user if any associated with the specified normalized email address.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetNormalizedEmailAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetNormalizedEmailAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Returns the normalized email for the specified <paramref name="user"/>.
             </summary>
@@ -657,7 +657,7 @@
             The task object containing the results of the asynchronous lookup operation, the normalized email address if any associated with the specified user.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetEmailConfirmedAsync(`0,System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetEmailConfirmedAsync(`0,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Sets the flag indicating whether the specified <paramref name="user"/>'s email address has been confirmed or not.
             </summary>
@@ -666,7 +666,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetNormalizedEmailAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetNormalizedEmailAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the normalized email for the specified <paramref name="user"/>.
             </summary>
@@ -675,7 +675,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetEmailAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetEmailAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the <paramref name="email"/> address for a <paramref name="user"/>.
             </summary>
@@ -684,7 +684,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Retrieves the current failed access count for the specified <paramref name="user"/>..
             </summary>
@@ -692,7 +692,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the failed access count.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetLockoutEnabledAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetLockoutEnabledAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Retrieves a flag indicating whether user lockout can enabled for the specified user.
             </summary>
@@ -702,7 +702,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, true if a user can be locked out, otherwise false.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.IncrementAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.IncrementAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Records that a failed access has occurred, incrementing the failed access count.
             </summary>
@@ -710,7 +710,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the incremented failed access count.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.ResetAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.ResetAccessFailedCountAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Resets a user's failed access count.
             </summary>
@@ -719,7 +719,7 @@
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
             <remarks>This is typically called after the account is successfully accessed.</remarks>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetLockoutEndDateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetLockoutEndDateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the last <see cref="T:System.DateTimeOffset"/> a user's last lockout expired, if any.
             Any time in the past should be indicates a user is not locked out.
@@ -731,7 +731,7 @@
             a user's lockout expired, if any.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetLockoutEndDateAsync(`0,System.Nullable{System.DateTimeOffset},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetLockoutEndDateAsync(`0,System.Nullable{System.DateTimeOffset},System.Threading.CancellationToken)">
             <summary>
             Locks out a user until the specified end date has passed. Setting a end date in the past immediately unlocks a user.
             </summary>
@@ -740,7 +740,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetLockoutEnabledAsync(`0,System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetLockoutEnabledAsync(`0,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Set the flag indicating if the specified <paramref name="user"/> can be locked out..
             </summary>
@@ -749,7 +749,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.AddLoginAsync(`0,Microsoft.AspNetCore.Identity.UserLoginInfo,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.AddLoginAsync(`0,Microsoft.AspNetCore.Identity.UserLoginInfo,System.Threading.CancellationToken)">
             <summary>
             Adds the <paramref name="login"/> given to the specified <paramref name="user"/>.
             </summary>
@@ -758,7 +758,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.RemoveLoginAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.RemoveLoginAsync(`0,System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Removes the <paramref name="loginProvider"/> given from the specified <paramref name="user"/>.
             </summary>
@@ -768,7 +768,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.FindByLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.FindByLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Retrieves the user associated with the specified login provider and login provider key.
             </summary>
@@ -779,7 +779,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing the user, if any which matched the specified login provider and key.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetLoginsAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetLoginsAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Retrieves the associated logins for the specified <param ref="user"/>.
             </summary>
@@ -789,7 +789,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> for the asynchronous operation, containing a list of <see cref="T:Microsoft.AspNetCore.Identity.UserLoginInfo"/> for the specified <paramref name="user"/>, if any.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetPasswordHashAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetPasswordHashAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the password hash for a user.
             </summary>
@@ -797,7 +797,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the password hash for the user.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.HasPasswordAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.HasPasswordAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Returns a flag indicating if the specified user has a password.
             </summary>
@@ -806,7 +806,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> containing a flag indicating if the specified user has a password. If the 
             user has a password the returned value with be true, otherwise it will be false.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetPasswordHashAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetPasswordHashAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the password hash for a user.
             </summary>
@@ -815,7 +815,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetPhoneNumberAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetPhoneNumberAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets the telephone number, if any, for the specified <paramref name="user"/>.
             </summary>
@@ -823,7 +823,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the user's telephone number, if any.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetPhoneNumberConfirmedAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetPhoneNumberConfirmedAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Gets a flag indicating whether the specified <paramref name="user"/>'s telephone number has been confirmed.
             </summary>
@@ -834,7 +834,7 @@
             telephone number otherwise false.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetPhoneNumberAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetPhoneNumberAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the telephone number for the specified <paramref name="user"/>.
             </summary>
@@ -843,7 +843,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetPhoneNumberConfirmedAsync(`0,System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetPhoneNumberConfirmedAsync(`0,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Sets a flag indicating if the specified <paramref name="user"/>'s phone number has been confirmed..
             </summary>
@@ -852,7 +852,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.AddToRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.AddToRoleAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Adds the given <paramref name="roleName"/> to the specified <paramref name="user"/>.
             </summary>
@@ -861,7 +861,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.RemoveFromRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.RemoveFromRoleAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Removes the given <paramref name="roleName"/> from the specified <paramref name="user"/>.
             </summary>
@@ -870,7 +870,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Retrieves all users in the specified role.
             </summary>
@@ -880,7 +880,7 @@
             The <see cref="T:System.Threading.Tasks.Task"/> contains a list of users, if any, that are in the specified role.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetRolesAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetRolesAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Retrieves the roles the specified <paramref name="user"/> is a member of.
             </summary>
@@ -888,7 +888,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that contains the roles the user is a member of.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.IsInRoleAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.IsInRoleAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Returns a flag indicating if the specified user is a member of the give <paramref name="roleName"/>.
             </summary>
@@ -898,7 +898,7 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> containing a flag indicating if the specified user is a member of the given group. If the
             user is a member of the group the returned value with be true, otherwise it will be false.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetSecurityStampAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetSecurityStampAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Get the security stamp for the specified <paramref name="user" />.
             </summary>
@@ -906,7 +906,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation, containing the security stamp for the specified <paramref name="user"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetSecurityStampAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetSecurityStampAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Sets the provided security <paramref name="stamp"/> for the specified <paramref name="user"/>.
             </summary>
@@ -915,7 +915,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.ReplaceCodesAsync(`0,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.ReplaceCodesAsync(`0,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
             <summary>
             Updates the recovery codes for the user while invalidating any previous recovery codes.
             </summary>
@@ -924,7 +924,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The new recovery codes for the user.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.RedeemCodeAsync(`0,System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.RedeemCodeAsync(`0,System.String,System.Threading.CancellationToken)">
             <summary>
             Returns whether a recovery code is valid for a user. Note: recovery codes are only valid
             once, and will be invalid after use.
@@ -934,7 +934,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>True if the recovery code was found for the user.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.CountCodesAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.CountCodesAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Returns how many recovery code are still valid for a user.
             </summary>
@@ -942,7 +942,7 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The number of valid recovery codes for the user..</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.GetTwoFactorEnabledAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.GetTwoFactorEnabledAsync(`0,System.Threading.CancellationToken)">
             <summary>
             Returns a flag indicating whether the specified <paramref name="user"/> has two factor authentication enabled or not,
             as an asynchronous operation.
@@ -954,7 +954,7 @@
             <paramref name="user"/> has two factor authentication enabled or not.
             </returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.SetTwoFactorEnabledAsync(`0,System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.SetTwoFactorEnabledAsync(`0,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Sets a flag indicating whether the specified <paramref name="user"/> has two factor authentication enabled or not,
             as an asynchronous operation.
@@ -964,19 +964,19 @@
             <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.Dispose">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.Dispose">
             <summary>
             Dispose the store
             </summary>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.ConvertIdFromString(System.String)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.ConvertIdFromString(System.String)">
             <summary>
             Converts the provided <paramref name="id"/> to a strongly typed key object.
             </summary>
             <param name="id">The id to convert.</param>
             <returns>An instance of <typeparamref name="TKey"/> representing the provided <paramref name="id"/>.</returns>
         </member>
-        <member name="M:AmSoul.Identity.MongoDB.Stores.UserStore`3.ConvertIdToString(`2)">
+        <member name="M:AmSoul.Identity.MongoDB.UserStore`3.ConvertIdToString(`2)">
             <summary>
             Converts the provided <paramref name="id"/> to its string representation.
             </summary>

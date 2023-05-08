@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AmSoul.Core.Utilis;
+namespace AmSoul.Core;
 
 public static class TypeConverterResolver
 {

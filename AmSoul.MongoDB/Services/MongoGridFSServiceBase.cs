@@ -1,11 +1,10 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
+﻿using AmSoul.Core;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
 using System.Security.Cryptography;
 
-namespace AmSoul.Core.Services;
+namespace AmSoul.MongoDB;
 
 public class MongoGridFSServiceBase : IMongoGridFSService
 {

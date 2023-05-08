@@ -1,7 +1,6 @@
-﻿using AmSoul.Core.Models;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
-namespace AmSoul.Core.Interfaces;
+namespace AmSoul.Core;
 
 public interface IPagination
 {

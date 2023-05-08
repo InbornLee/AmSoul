@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AmSoul.Core.Interfaces;
+namespace AmSoul.Core;
 
 public interface IDataModel
 {

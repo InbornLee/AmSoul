@@ -1,4 +1,4 @@
-﻿namespace AmSoul.Core.Extensions;
+﻿namespace AmSoul.Core;
 
 public static class ObjectExtensions
 {

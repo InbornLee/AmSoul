@@ -1,9 +1,7 @@
-﻿using AmSoul.Core.Interfaces;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using MongoDB.Driver.Core.Configuration;
 
-namespace AmSoul.Core.Models;
-
+namespace AmSoul.MongoDB;
 public class MongoDbDatabaseSetting : IMongoDbDatabaseSetting
 {
     public string Server { get; set; } = "localhost";

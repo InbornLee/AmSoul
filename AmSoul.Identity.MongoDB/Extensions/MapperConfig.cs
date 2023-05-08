@@ -1,7 +1,6 @@
-﻿using AmSoul.Identity.MongoDB.Models;
-using AutoMapper;
+﻿using AutoMapper;
 
-namespace AmSoul.Identity.MongoDB.Extensions;
+namespace AmSoul.Identity.MongoDB;
 
 public class MapperConfig : Profile
 {

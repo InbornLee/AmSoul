@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace AmSoul.Core.Utilis;
+namespace AmSoul.Core;
 
 /// <summary>
 /// 身份证号验证工具

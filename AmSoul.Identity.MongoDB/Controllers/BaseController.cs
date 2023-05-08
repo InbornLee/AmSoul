@@ -1,10 +1,8 @@
-﻿using AmSoul.Identity.MongoDB.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 
-namespace AmSoul.Identity.MongoDB.Controllers;
+namespace AmSoul.Identity.MongoDB;
 
 public abstract class BaseController : ControllerBase
 {

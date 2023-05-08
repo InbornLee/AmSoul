@@ -1,7 +1,6 @@
-using AmSoul.Core.Extensions;
-using AmSoul.Core.Models;
-using AmSoul.Identity.MongoDB.Controllers;
-using AmSoul.Identity.MongoDB.Interfaces;
+using AmSoul.Core;
+using AmSoul.Identity.MongoDB;
+using AmSoul.MongoDB;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using Sample.Models;

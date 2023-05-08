@@ -1,5 +1,5 @@
-﻿using AmSoul.Core.Models;
-using AmSoul.Core.Services;
+﻿using AmSoul.Core;
+using AmSoul.MongoDB;
 using Sample.Models;
 
 namespace Sample.Services;

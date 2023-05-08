@@ -1,6 +1,6 @@
 ﻿using System.Dynamic;
 
-namespace AmSoul.Core.Extensions;
+namespace AmSoul.Core;
 
 /// <summary>
 /// Dynamic动态类扩展

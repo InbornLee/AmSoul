@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>./AmSoul.Extension.Sql.xml</DocumentationFile>
+    <DocumentationFile>./AmSoul.SQL.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,6 +22,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AmSoul.Core\AmSoul.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AmSoul.SQL.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

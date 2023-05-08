@@ -1,4 +1,4 @@
-﻿namespace AmSoul.Core.Interfaces;
+﻿namespace AmSoul.Core;
 
 public interface IBaseResponse
 {

@@ -1,9 +1,7 @@
-﻿using AmSoul.Core.Interfaces;
-using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 
-namespace AmSoul.Core.Models;
+namespace AmSoul.Core;
 
 /// <summary>
 /// 分页参数
@@ -54,8 +52,8 @@ public class QueryParam
 /// <typeparam name="T"></typeparam>
 public sealed class PageData<T> : BaseResponse<T>
 {
-    [BsonElement("total")]
+    //[BsonElement("total")]
     public int? Total { get; set; }
-    [BsonElement("data")]
+    //[BsonElement("data")]
     public new ICollection<T>? Data { get; set; }
 }

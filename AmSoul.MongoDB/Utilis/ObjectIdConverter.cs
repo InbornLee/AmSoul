@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace AmSoul.Core.Utilis;
+namespace AmSoul.MongoDB;
 
 public class ObjectIdConverter : TypeConverter
 {

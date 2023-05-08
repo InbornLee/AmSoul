@@ -1,13 +1,8 @@
-﻿using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
-namespace AmSoul.Core.Extensions;
+namespace AmSoul.Core;
 
 /// <summary>
 /// Service Collection Extensions
@@ -15,35 +10,13 @@ namespace AmSoul.Core.Extensions;
 public static partial class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Register Mongodb Store
-    /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    public static void AddMongoDb(this IServiceCollection services, IConfiguration configuration)
-    {
-        AddMongoDb<MongoDbDatabaseSetting>(services, configuration);
-    }
-    /// <summary>
-    /// Register Mongodb Store External
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    public static void AddMongoDb<T>(this IServiceCollection services, IConfiguration configuration) where T : class, IMongoDbDatabaseSetting
-    {
-        services.Configure<T>(configuration.GetSection(typeof(T).Name));
-        services.TryAddScoped(sp => sp.GetRequiredService<IOptions<T>>().Value);
-    }
-
-    /// <summary>
     /// Register Jwt Swagger
     /// </summary>
     /// <param name="services"></param>
     /// <param name="title"></param>
     /// <param name="version"></param>
     /// <param name="description"></param>
-    /// <param name="externalXmlFileName"></param>
-    public static void AddJwtSwaggerGen(this IServiceCollection services, string title, string version, string description, string? externalXmlFileName = default)
+    public static void AddJwtSwaggerGen(this IServiceCollection services, string title, string version, string description)
     {
         services.AddSwaggerGen(options =>
         {
@@ -53,14 +26,8 @@ public static partial class ServiceCollectionExtensions
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             var baseXmlPath = Path.Combine(baseDirectory, "AmSoul.Core.xml");
             var xmlPath = Path.Combine(baseDirectory, AppDomain.CurrentDomain.FriendlyName + ".xml");
-
             options.IncludeXmlComments(baseXmlPath);
             options.IncludeXmlComments(xmlPath);
-            if (!string.IsNullOrWhiteSpace(externalXmlFileName))
-            {
-                var externalXmlPath = Path.Combine(baseDirectory, externalXmlFileName);
-                options.IncludeXmlComments(externalXmlPath);
-            }
 
             options.OrderActionsBy(o => o.RelativePath);
 
@@ -80,6 +47,19 @@ public static partial class ServiceCollectionExtensions
             };
             options.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
             options.AddSecurityRequirement(new OpenApiSecurityRequirement { { securityScheme, Array.Empty<string>() } });
+        });
+
+    }
+    public static void RegisterSwaggerXmlFile(IServiceCollection services, params string[] swaggerXmlFiles)
+    {
+        services.ConfigureSwaggerGen(options =>
+        {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            foreach (var xmlfile in swaggerXmlFiles)
+            {
+                var xmlPath = Path.Combine(baseDirectory, xmlfile);
+                options.IncludeXmlComments(xmlPath);
+            }
         });
 
     }

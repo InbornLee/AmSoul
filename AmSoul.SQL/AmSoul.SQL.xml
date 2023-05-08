@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>AmSoul.Extension.Sql</name>
+        <name>AmSoul.SQL</name>
     </assembly>
     <members>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddMySql(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddMySql(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register Mysql Store
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddMySql``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddMySql``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register Mysql Store External
             </summary>
@@ -19,28 +19,28 @@
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddOracle(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddOracle(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register Oracle Store
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddOracle``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddOracle``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register Oracle Store External
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register SqlServer Store
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Extensions.ServiceCollectionExtensions.AddSqlServer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:AmSoul.SQL.ServiceCollectionExtensions.AddSqlServer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Register SqlServer Store External
             </summary>
@@ -48,34 +48,39 @@
             <param name="services"></param>
             <param name="configuration"></param>
         </member>
-        <member name="T:AmSoul.Extension.Sql.Models.MySqlDatabaseSetting">
+        <member name="T:AmSoul.SQL.MySqlDatabaseSetting">
             <summary>
             Default MySql DatabaseSetting
             </summary>
         </member>
-        <member name="T:AmSoul.Extension.Sql.Models.SqlServerDatabaseSetting">
+        <member name="T:AmSoul.SQL.SqlServerDatabaseSetting">
             <summary>
             Default SqlServer DatabaseSetting
             </summary>
         </member>
-        <member name="T:AmSoul.Extension.Sql.Models.OracleDatabaseSetting">
+        <member name="T:AmSoul.SQL.OracleDatabaseSetting">
             <summary>
             Default Oracle DatabaseSetting
             </summary>
         </member>
-        <member name="T:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1">
+        <member name="T:AmSoul.SQL.PostgreSQLDatabaseSetting">
             <summary>
-            SqlSugar Restful异步查询服务
+            Default PostgreSQL DatabaseSetting
+            </summary>
+        </member>
+        <member name="T:AmSoul.SQL.SqlQueryServiceBase`1">
+            <summary>
+            Sql Restful异步查询服务
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1.#ctor(AmSoul.Core.Interfaces.IDatabaseSetting)">
+        <member name="M:AmSoul.SQL.SqlQueryServiceBase`1.#ctor(AmSoul.Core.IDatabaseSetting)">
             <summary>
             构造函数
             </summary>
             <param name="settings"></param>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1.GetAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlQueryServiceBase`1.GetAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             按ID查询
             </summary>
@@ -83,7 +88,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlQueryServiceBase`1.QueryAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
             <summary>
             多条件查询
             </summary>
@@ -91,7 +96,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1.GetPagesAsync(AmSoul.Core.Models.Pagination,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlQueryServiceBase`1.GetPagesAsync(AmSoul.Core.Pagination,System.Threading.CancellationToken)">
             <summary>
             分页查询
             </summary>
@@ -100,18 +105,18 @@
             <returns></returns>
             <exception cref="T:System.ArgumentException"></exception>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarQueryServiceBase`1.Dispose">
+        <member name="M:AmSoul.SQL.SqlQueryServiceBase`1.Dispose">
             <summary>
             销毁
             </summary>
         </member>
-        <member name="T:AmSoul.Extension.Sql.Services.SqlSugarRestServiceBase`1">
+        <member name="T:AmSoul.SQL.SqlRestServiceBase`1">
             <summary>
-            SqlSugar Restful异步基础服务
+            Sql Restful异步基础服务
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarRestServiceBase`1.CreateAsync(`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlRestServiceBase`1.CreateAsync(`0,System.Threading.CancellationToken)">
             <summary>
             新增
             </summary>
@@ -119,7 +124,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarRestServiceBase`1.DeleteAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlRestServiceBase`1.DeleteAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             删除
             </summary>
@@ -127,7 +132,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarRestServiceBase`1.DeleteAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlRestServiceBase`1.DeleteAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
             <summary>
             删除
             </summary>
@@ -135,7 +140,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:AmSoul.Extension.Sql.Services.SqlSugarRestServiceBase`1.PutAsync(System.String,`0,System.Threading.CancellationToken)">
+        <member name="M:AmSoul.SQL.SqlRestServiceBase`1.PutAsync(System.String,`0,System.Threading.CancellationToken)">
             <summary>
             更新
             </summary>

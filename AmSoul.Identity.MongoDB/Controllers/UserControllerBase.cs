@@ -1,12 +1,10 @@
-﻿using AmSoul.Core.Models;
-using AmSoul.Identity.MongoDB.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
+﻿using AmSoul.Core;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AmSoul.Identity.MongoDB.Controllers;
+namespace AmSoul.Identity.MongoDB;
 
 public abstract class UserControllerBase : BaseController
 {

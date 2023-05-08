@@ -1,4 +1,4 @@
-﻿using AmSoul.Core.Interfaces;
+﻿using AmSoul.Core;
 using SqlSugar;
 
 namespace Sample.Models;

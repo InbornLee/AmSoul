@@ -1,7 +1,7 @@
-﻿using AmSoul.Core.Models;
+﻿using AmSoul.Core;
 using Microsoft.AspNetCore.Identity;
 
-namespace AmSoul.Identity.MongoDB.Models;
+namespace AmSoul.Identity.MongoDB;
 
 public class IdentityResponse : BaseResponse<string>
 {

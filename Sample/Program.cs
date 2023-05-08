@@ -1,8 +1,7 @@
-using AmSoul.Core.Extensions;
-using AmSoul.Core.Models;
-using AmSoul.Extension.Sql.Extensions;
-using AmSoul.Identity.MongoDB.Extensions;
-using AmSoul.Identity.MongoDB.Models;
+using AmSoul.Core;
+using AmSoul.MongoDB;
+using AmSoul.SQL;
+using AmSoul.Identity.MongoDB;
 using Panda.DynamicWebApi;
 using Sample.Models;
 
@@ -35,22 +34,15 @@ builder.Services.AddDynamicWebApi();
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddJwtSwaggerGen("¶¯Ì¬ Webapi", "v1", "Webapi ²âÊÔ");
-builder.Services.AddSwaggerGen(options =>
-{
-    var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-    var baseXmlPath = Path.Combine(baseDirectory, "AmSoul.Extension.Sql.xml");
-
-    options.IncludeXmlComments(baseXmlPath);
-});
 
 builder.Services.AddCors(options =>
 {
-options.AddDefaultPolicy(policy =>
-{
-policy.AllowAnyOrigin();
-policy.AllowAnyMethod();
-policy.AllowAnyHeader();
-});
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin();
+        policy.AllowAnyMethod();
+        policy.AllowAnyHeader();
+    });
 });
 builder.Services.AddEndpointsApiExplorer();
 

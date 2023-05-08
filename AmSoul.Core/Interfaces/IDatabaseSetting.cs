@@ -1,4 +1,4 @@
-﻿namespace AmSoul.Core.Interfaces;
+﻿namespace AmSoul.Core;
 
 public interface IDatabaseSetting
 {
@@ -10,7 +10,3 @@ public interface IDatabaseSetting
     string ConnectionString { get; }
 
 }
-public interface IMysqlDatabaseSetting : IDatabaseSetting { }
-public interface IMongoDbDatabaseSetting : IDatabaseSetting { }
-public interface IOracleDatabaseSetting : IDatabaseSetting { }
-public interface ISqlServerDatabaseSetting : IDatabaseSetting { }

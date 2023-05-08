@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AmSoul.Core\AmSoul.Core.csproj" />
+    <ProjectReference Include="..\AmSoul.MongoDB\AmSoul.MongoDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>IdentityErrorResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AmSoul.Identity.MongoDB.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

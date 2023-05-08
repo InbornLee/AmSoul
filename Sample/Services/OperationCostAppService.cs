@@ -1,10 +1,9 @@
-﻿using AmSoul.Extension.Sql.Models;
-using AmSoul.Extension.Sql.Services;
+﻿using AmSoul.SQL;
 using Sample.Models;
 
 namespace Sample.Services
 {
-    public class OperationCostAppService : SqlSugarQueryServiceBase<OperationCost>
+    public class OperationCostAppService : SqlQueryServiceBase<OperationCost>
     {
         public OperationCostAppService(OracleDatabaseSetting settings) : base(settings) { }
         //public async Task<List<OperationCost>> GetAsync(string id, string secondCategoryCode, CancellationToken cancellationToken = default)

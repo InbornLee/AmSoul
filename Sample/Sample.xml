@@ -390,7 +390,7 @@
             AppleB
             </summary>
         </member>
-        <member name="M:Sample.Services.ArchiveAppService.#ctor(AmSoul.Core.Models.MongoDbDatabaseSetting)">
+        <member name="M:Sample.Services.ArchiveAppService.#ctor(AmSoul.MongoDB.MongoDbDatabaseSetting)">
             <summary>
             构造函数
             </summary>
@@ -424,7 +424,7 @@
             日志
             </summary>
         </member>
-        <member name="M:Sample.Services.ProjectLoggerAppService.#ctor(AmSoul.Core.Models.MongoDbDatabaseSetting)">
+        <member name="M:Sample.Services.ProjectLoggerAppService.#ctor(AmSoul.MongoDB.MongoDbDatabaseSetting)">
             <summary>
             构造函数
             </summary>

@@ -1,4 +1,4 @@
-﻿using AmSoul.Core.Services;
+﻿using AmSoul.MongoDB;
 using Sample.Models;
 
 namespace Sample.Services;

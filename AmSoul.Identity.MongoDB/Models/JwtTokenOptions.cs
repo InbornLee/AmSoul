@@ -1,4 +1,4 @@
-﻿namespace AmSoul.Identity.MongoDB.Models;
+﻿namespace AmSoul.Identity.MongoDB;
 
 public sealed class JwtTokenOptions
 {

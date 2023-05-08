@@ -1,8 +1,4 @@
-﻿using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
-using AmSoul.Identity.MongoDB.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
-using AmSoul.Identity.MongoDB.Utilis;
+﻿using AmSoul.Core;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace AmSoul.Identity.MongoDB.Controllers;
+namespace AmSoul.Identity.MongoDB;
 
 [Route("api/[controller]")]
 [ApiController]

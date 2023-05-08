@@ -1,8 +1,4 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
-using AmSoul.Identity.MongoDB.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
-using AmSoul.Identity.MongoDB.Utilis;
+﻿using AmSoul.Core;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
@@ -11,7 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace AmSoul.Identity.MongoDB.Services;
+namespace AmSoul.Identity.MongoDB;
 public class UserServiceBase : UserServiceBase<BaseUser, BaseRole>, IUserService
 {
     public UserServiceBase(

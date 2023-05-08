@@ -1,12 +1,4 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
-using AmSoul.Core.Utilis;
-using AmSoul.Identity.MongoDB.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
-using AmSoul.Identity.MongoDB.Services;
-using AmSoul.Identity.MongoDB.Stores;
-using AmSoul.Identity.MongoDB.Utilis;
+﻿using AmSoul.MongoDB;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +10,7 @@ using MongoDB.Bson;
 using System.ComponentModel;
 using System.Text;
 
-namespace AmSoul.Identity.MongoDB.Extensions;
+namespace AmSoul.Identity.MongoDB;
 
 /// <summary>
 /// Service Collection Extensions
@@ -181,6 +173,8 @@ public static partial class ServiceCollectionExtensions
         {
             TypeDescriptor.AddAttributes(typeof(ObjectId), new Attribute[1] { new TypeConverterAttribute(typeof(ObjectIdConverter)) });
         }
+
+        Core.ServiceCollectionExtensions.RegisterSwaggerXmlFile(builder.Services, "AmSoul.Identity.MongoDB.xml");
         return builder;
     }
 }

@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
 
-namespace AmSoul.Identity.MongoDB.Models;
+namespace AmSoul.Identity.MongoDB;
 
 public class BaseRole : BaseRole<ObjectId>
 {

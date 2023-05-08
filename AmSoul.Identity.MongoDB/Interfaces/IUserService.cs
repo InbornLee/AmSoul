@@ -1,9 +1,8 @@
-﻿using AmSoul.Core.Interfaces;
-using AmSoul.Identity.MongoDB.Models;
+﻿using AmSoul.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AmSoul.Identity.MongoDB.Interfaces;
+namespace AmSoul.Identity.MongoDB;
 
 public interface IUserService : IUserService<BaseUser, BaseRole>
 { }

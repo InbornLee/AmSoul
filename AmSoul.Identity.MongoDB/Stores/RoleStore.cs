@@ -1,5 +1,4 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Identity.MongoDB.Models;
+﻿using AmSoul.MongoDB;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
@@ -7,7 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Security.Claims;
 
-namespace AmSoul.Identity.MongoDB.Stores;
+namespace AmSoul.Identity.MongoDB;
 
 /// <summary>
 /// Creates a new instance of a persistence store for roles.

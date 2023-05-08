@@ -1,6 +1,4 @@
-﻿using AmSoul.Core.Models;
-
-namespace AmSoul.Core.Interfaces;
+﻿namespace AmSoul.Core;
 
 /// <summary>
 /// Restful异步查询服务接口

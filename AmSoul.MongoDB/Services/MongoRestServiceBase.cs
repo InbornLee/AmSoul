@@ -1,6 +1,4 @@
-﻿using AmSoul.Core.Extensions;
-using AmSoul.Core.Interfaces;
-using AmSoul.Core.Models;
+﻿using AmSoul.Core;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
@@ -8,7 +6,7 @@ using MongoDB.Driver;
 using Panda.DynamicWebApi;
 using Panda.DynamicWebApi.Attributes;
 
-namespace AmSoul.Core.Services;
+namespace AmSoul.MongoDB;
 
 [DynamicWebApi]
 public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IAsyncQueryService<T> where T : class, IDataModel
@@ -38,7 +36,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<List<T>>()
             {
                 Succeeded = resultList != null && resultList.Count > 0,
-                Message = resultList != null && resultList.Count > 0 ? Resources.Resources.QuerySucceeded.Format(resultList.Count) : Resources.Resources.QueryFail,
+                Message = resultList != null && resultList.Count > 0 ? Resources.QuerySucceeded.Format(resultList.Count) : Resources.QueryFail,
                 Data = resultList
             };
         }
@@ -47,7 +45,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message }
             };
         }
@@ -64,14 +62,14 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            if (parameters == null || parameters.Count < 1) throw new ArgumentException(Resources.Resources.QueryParamError);
+            if (parameters == null || parameters.Count < 1) throw new ArgumentException(Resources.QueryParamError);
             var filters = parameters.Select(x => Builders<T>.Filter.Eq(x.Key.ToPascalCase(), x.Value)).ToList();
             var result = await _collection.FindAsync(Builders<T>.Filter.And(filters), cancellationToken: cancellationToken);
             var resultList = await result.ToListAsync(cancellationToken: cancellationToken);
             return new BaseResponse<List<T>>()
             {
                 Succeeded = resultList != null && resultList.Count > 0,
-                Message = resultList != null && resultList.Count > 0 ? Resources.Resources.QuerySucceeded.Format(resultList.Count) : Resources.Resources.QueryFail,
+                Message = resultList != null && resultList.Count > 0 ? Resources.QuerySucceeded.Format(resultList.Count) : Resources.QueryFail,
                 Data = resultList
             };
         }
@@ -80,7 +78,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message },
             };
         }
@@ -97,7 +95,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            if (conditions == null || conditions.Count < 1) throw new ArgumentException(Resources.Resources.AggregateFail);
+            if (conditions == null || conditions.Count < 1) throw new ArgumentException(Resources.AggregateFail);
             var stages = conditions.Select((condition, i) => i == 0
               ? (IPipelineStageDefinition)new JsonPipelineStageDefinition<T, BsonDocument>(condition)
               : new JsonPipelineStageDefinition<BsonDocument, BsonDocument>(condition)).ToList();
@@ -108,7 +106,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<List<dynamic>>()
             {
                 Succeeded = true,
-                Message = Resources.Resources.QueryComplete,
+                Message = Resources.QueryComplete,
                 Data = list.Select(v => DynamicExtensions.GetDynamicRootObject(BsonSerializer.Deserialize<dynamic>(v))).ToList()
             };
         }
@@ -117,7 +115,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<string>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message }
             };
         }
@@ -135,7 +133,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            if (paginationParams == null) throw new ArgumentException(Resources.Resources.AggregateFail);
+            if (paginationParams == null) throw new ArgumentException(Resources.AggregateFail);
             var conditions = paginationParams.ParseMongoAggregateStage();
             var stages = conditions.Select((condition, i) => i == 0
               ? (IPipelineStageDefinition)new BsonDocumentPipelineStageDefinition<T, BsonDocument>(condition.ToBsonDocument())
@@ -145,10 +143,10 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             PipelineStagePipelineDefinition<T, BsonDocument> pipeline = new(stages);
             var result = (await _collection.AggregateAsync(pipeline, new AggregateOptions { AllowDiskUse = true }, cancellationToken)).FirstOrDefault(cancellationToken: cancellationToken);
 
-            if (result == null) return new PageData<T>() { Succeeded = false, Message = Resources.Resources.QueryFail };
+            if (result == null) return new PageData<T>() { Succeeded = false, Message = Resources.QueryFail };
             var data = BsonSerializer.Deserialize<PageData<T>>(result);
             data.Succeeded = true;
-            data.Message = Resources.Resources.QueryComplete;
+            data.Message = Resources.QueryComplete;
             return data;
         }
         catch (Exception ex)
@@ -156,7 +154,7 @@ public abstract class MongoQueryServiceBase<T> : IDisposable, IDynamicWebApi, IA
             return new BaseResponse<string>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message }
             };
         }
@@ -187,7 +185,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
     /// 构造函数
     /// </summary>
     /// <param name="settings"></param>
-    public MongoRestServiceBase(IDatabaseSetting settings) : base(settings) { }
+    public MongoRestServiceBase(IMongoDbDatabaseSetting settings) : base(settings) { }
 
     /// <summary>
     /// 新增
@@ -208,7 +206,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<T>()
             {
                 Succeeded = true,
-                Message = Resources.Resources.CreateSucceeded,
+                Message = Resources.CreateSucceeded,
                 Data = obj
             };
         }
@@ -217,7 +215,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.CreateFail,
+                Message = Resources.CreateFail,
                 Errors = new List<string>() { ex.Message },
                 Data = obj
             };
@@ -241,7 +239,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<DeleteResult>()
             {
                 Succeeded = result.IsAcknowledged && result.DeletedCount > 0,
-                Message = result.IsAcknowledged && result.DeletedCount > 0 ? Resources.Resources.DeleteSucceeded.Format(result.DeletedCount) : Resources.Resources.DeleteFail.Format(result.DeletedCount),
+                Message = result.IsAcknowledged && result.DeletedCount > 0 ? Resources.DeleteSucceeded.Format(result.DeletedCount) : Resources.DeleteFail.Format(result.DeletedCount),
                 Data = result
             };
         }
@@ -250,7 +248,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message },
             };
         }
@@ -275,7 +273,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<DeleteResult>()
             {
                 Succeeded = result.IsAcknowledged && result.DeletedCount > 0,
-                Message = result.IsAcknowledged && result.DeletedCount > 0 ? Resources.Resources.DeleteSucceeded.Format(result.DeletedCount) : Resources.Resources.DeleteFail.Format(result.DeletedCount),
+                Message = result.IsAcknowledged && result.DeletedCount > 0 ? Resources.DeleteSucceeded.Format(result.DeletedCount) : Resources.DeleteFail.Format(result.DeletedCount),
                 Data = result
             };
         }
@@ -284,7 +282,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message },
             };
         }
@@ -309,7 +307,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<ReplaceOneResult>()
             {
                 Succeeded = result.IsAcknowledged && result.ModifiedCount > 0,
-                Message = result.IsAcknowledged && result.ModifiedCount > 0 ? Resources.Resources.UpdateSucceeded.Format(result.ModifiedCount) : Resources.Resources.UpdateFail.Format(result.ModifiedCount),
+                Message = result.IsAcknowledged && result.ModifiedCount > 0 ? Resources.UpdateSucceeded.Format(result.ModifiedCount) : Resources.UpdateFail.Format(result.ModifiedCount),
                 Data = result
             };
         }
@@ -318,7 +316,7 @@ public abstract class MongoRestServiceBase<T> : MongoQueryServiceBase<T>, IAsync
             return new BaseResponse<T>()
             {
                 Succeeded = false,
-                Message = Resources.Resources.Exception,
+                Message = Resources.Exception,
                 Errors = new List<string>() { ex.Message },
             };
         }
